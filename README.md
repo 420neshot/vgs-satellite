@@ -157,12 +157,9 @@ _Note: You can use any directory you like to mount `/data` volume - just make su
 
 Example:
 ```bash
-# make working directory:
-mkdir ~/Downloads/Satellite
-
-# put a basic YAML with an Inbound Route that redacts account_number in JSON format:
-ls -lah routes.yml
--rw-r--r--@ 1 oneshot  staff   1.4K Aug  4 18:22 routes.yml
+# put a basic YAML with an Inbound Route that redacts account_number in JSON format into your working directory:
+ls -lah ~/Satellite/routes.yml
+-rw-r--r--@ 1 user  group   1.4K Aug  4 18:22 routes.yml
 
 # start docker container:
 docker run --rm -v $PWD/:/data -p 8089:8089 -p 9098:9098 -p 9099:9099 -e SATELLITE_ROUTES_PATH=/data/routes.yml -e SATELLITE_DEBUG=true verygood/satellite
