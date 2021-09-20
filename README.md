@@ -155,14 +155,14 @@ docker run --rm -v $HOME/.vgs-satellite/:/data -p 8089:8089 -p 9098:9098 -p 9099
 
 _Note: You can use any directory you like to mount `/data` volume - just make sure the directory exists before you start a container._
 
-Example:
+Simple usage example:
 ```bash
-# put a basic YAML with an Inbound Route that redacts account_number in JSON format into your working directory:
+# put a basic YAML with an Inbound Route that redacts account_number in JSON format:
 ls -lah ~/Satellite/routes.yml
 -rw-r--r--@ 1 user  group   1.4K Aug  4 18:22 routes.yml
 
 # start docker container:
-docker run --rm -v $PWD/:/data -p 8089:8089 -p 9098:9098 -p 9099:9099 -e SATELLITE_ROUTES_PATH=/data/routes.yml -e SATELLITE_DEBUG=true verygood/satellite
+docker run --rm -v /Users/user/Satellite/:/data -p 8089:8089 -p 9098:9098 -p 9099:9099 -e SATELLITE_ROUTES_PATH=/data/routes.yml -e SATELLITE_DEBUG=true verygood/satellite
 
 # send a test request:
 curl https://localhost:9098/post -k \
