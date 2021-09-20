@@ -155,7 +155,7 @@ docker run --rm -v $HOME/.vgs-satellite/:/data -p 8089:8089 -p 9098:9098 -p 9099
 
 _Note: You can use any directory you like to mount `/data` volume - just make sure the directory exists before you start a container._
 
-Simple usage example:
+#### Simple usage example:
 ```bash
 # put a basic YAML with an Inbound Route that redacts account_number in JSON format:
 ls -lah ~/Satellite/routes.yml
